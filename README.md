@@ -7,3 +7,9 @@ A simple e-commerce website with react js and woocommerce
 3. react-cli
 4.
 
+### Node
+
+### Npm
+```sh
+npm install
+```
