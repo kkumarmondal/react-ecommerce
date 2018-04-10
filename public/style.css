@@ -39,6 +39,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*[ FONT ]
 ///////////////////////////////////////////////////////////
 */
+.minheight{ min-height: 1200px}
+.heroimage{width:100%;}
+
+
 
 @font-face {
     font-family: Montserrat-Regular;
@@ -531,6 +535,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     -webkit-box-shadow: 0 1px 5px 0px rgba(0,0,0,0.2);
     -o-box-shadow: 0 1px 5px 0px rgba(0,0,0,0.2);
     -ms-box-shadow: 0 1px 5px 0px rgba(0,0,0,0.2); 
+    transition: all 0.3s;
   }
   
   /*[ Top bar ]
