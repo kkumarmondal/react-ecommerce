@@ -7,8 +7,12 @@ export default function(state={},action){
                 return {...state,artistList:action.payload}
             case 'GET_ARTISTS_DETAIL':
                 return {...state,artistData:action.payload}
-            case 'CLEAR_ARTIST_DETAIL':
-                return {...state,artistData:action.payload}   
+            case 'CLEAR_PRODUCT_DETAIL':
+                return {...state,artistData:action.payload}
+            case 'GET_ALL_POST':
+                return {...state, postData:action.payload} 
+            case 'GET_PRODUCT_DETAIL':
+                return {...state, productData:action.payload}
             default:
                 return state;
         }

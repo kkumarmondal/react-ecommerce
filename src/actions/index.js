@@ -32,10 +32,30 @@ export function artistDetail(id){
     }
 }
 
+export function postList(){
+    const request  = axios.get(`http://localhost/react-ecommerce/reactPress/wp-json/wp/v2/posts`)
+                        .then( response => response.data)
+                        
+    return {
+        type: 'GET_ALL_POST',
+        payload: request
+    }
+}
 
-export function clearArtistDetail(){
+export function productDetails(id){
+    const request = axios.get(`http://localhost/react-ecommerce/reactPress/wp-json/wp/v2/posts/${id}`)
+    .then( response => response.data)
+    
     return{
-        type:'CLEAR_ARTIST_DETAIL',
+        type:'GET_PRODUCT_DETAIL',
+        payload: request
+    }
+    
+}
+
+export function clearProductDetail(){
+    return{
+        type:'CLEAR_PRODUCT_DETAIL',
         payload:null
     }
 }
