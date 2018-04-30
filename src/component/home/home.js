@@ -3,6 +3,7 @@ import Banner from './banner'
 import {connect} from 'react-redux'
 import * as actions from './../../actions'
 import { Link } from 'react-router-dom';
+import Header from '../header'
 
 class Home extends Component {
 
@@ -26,6 +27,7 @@ class Home extends Component {
       
         return (
             <div>
+                <Header />
                 <Banner/>
                 <br/>
                {this.renderPost(this.props.data)}
