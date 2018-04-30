@@ -14,19 +14,19 @@ class Banner extends Component {
         return (
             <Slider {...settings}>
         <div>
-        <img src="images/master-slide-01.jpg" className="heroimage" />
+        <img src="images/master-slide-01.jpg" className="heroimage" alt="" />
           
         </div>
         <div>
-        <img src="images/master-slide-02.jpg" className="heroimage" />
+        <img src="images/master-slide-02.jpg" className="heroimage" alt="" />
           
         </div>
         <div>
-        <img src="images/master-slide-03.jpg" className="heroimage" />
+        <img src="images/master-slide-03.jpg" className="heroimage" alt="" />
           
         </div>
         <div>
-        <img src="images/master-slide-04.jpg" className="heroimage"/>
+        <img src="images/master-slide-04.jpg" className="heroimage" alt=""/>
           
         </div>
       </Slider>
