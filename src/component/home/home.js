@@ -3,7 +3,7 @@ import Banner from './banner'
 import {connect} from 'react-redux'
 import * as actions from './../../actions'
 import { Link } from 'react-router-dom';
-import Header from '../header'
+import Header from './../header'
 
 class Home extends Component {
 
@@ -15,7 +15,7 @@ class Home extends Component {
 
      renderPost =(post)=> (
          post ?
-         post.map(item =>(          
+         post.map(item => (          
            //  <div key={item.id} dangerouslySetInnerHTML={{__html:item.content.rendered}}> </div>
            <Link key={item.id} to={`/Product/${item.id}`}>
                 <div>  {item.title.rendered} </div>

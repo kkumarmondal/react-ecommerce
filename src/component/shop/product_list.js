@@ -5,7 +5,6 @@ const ProductList = (props) =>{
 
         return (
             <div className="col-sm-12 col-md-6 col-lg-4 p-b-50">
-							{console.log(props.data)}
 							<div className="block2">
 								<div className="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
 									<img src= {props.data.images[0].src} alt="IMG-PRODUCT"/>
@@ -26,7 +25,7 @@ const ProductList = (props) =>{
 								</div>
 
 								<div className="block2-txt p-t-20">
-									<Link to="/product" className="block2-name dis-block s-text3 p-b-5">
+									<Link to={`/product/${props.data.id}`} className="block2-name dis-block s-text3 p-b-5">
 									{props.data.name} &nbsp;
 									</Link>
 

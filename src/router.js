@@ -6,6 +6,7 @@ import Home from './component/home/home'
 import About from './component/about'
 import Shop from './component/shop/shop'
 import PDPPage from './component/pdpPage'
+import CartPage from './component/cart/cartViewPage'
 
 const Router = () => {
     return (
@@ -15,6 +16,7 @@ const Router = () => {
                 <Route path="/shop/" exact component={Shop} />
                 <Route path="/" exact component={Home} />
                 <Route path="/Product/:id" exact component={PDPPage}/>
+                <Route path = "/CartPage/:id" exact component={CartPage}/>
              </Switch>
         </div>
     )
