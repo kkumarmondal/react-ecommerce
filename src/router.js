@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from './component/home/home'
 import About from './component/about'
 import Shop from './component/shop/shop'
-import PDPPage from './component/pdpPage'
+import PDPPage from './component/pdp/pdpPage'
 import CartPage from './component/cart/cartViewPage'
 
 const Router = () => {
