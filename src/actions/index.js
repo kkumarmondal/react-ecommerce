@@ -53,8 +53,8 @@ export function clearProductDetail(){
 // action function to fetch all products from PRODUCTS(woocommerce specific)
 export function productList() {
     var url =`https://localhost/react-ecommerce/reactPress/wp-json/wc/v2/products`;
-    var username = 'ck_d02f3be15a00eb504db2769f868853d070dc359c';
-    var pswrd= 'cs_91cea2f523027b5b004a7e9abe9b6e2fe1d802f1';
+    var username = 'ck_5bf3a9af0db119312fa463bd6eae82f9f07835ba';
+    var pswrd= 'cs_bb0658ac9ac9a9a98db6fb2cbc0c9635f4adc345';
     const request =axios.get(url,{
         auth: {
             username: username,
@@ -71,8 +71,8 @@ export function productList() {
 
 export function productDetails(id){
     var url =`https://localhost/react-ecommerce/reactPress/wp-json/wc/v2/products/${id}`;
-    var username = 'ck_d02f3be15a00eb504db2769f868853d070dc359c';
-    var pswrd= 'cs_91cea2f523027b5b004a7e9abe9b6e2fe1d802f1';
+    var username = 'ck_5bf3a9af0db119312fa463bd6eae82f9f07835ba';
+    var pswrd= 'cs_bb0658ac9ac9a9a98db6fb2cbc0c9635f4adc345';
     const request =axios.get(url,{
         auth: {
             username: username,

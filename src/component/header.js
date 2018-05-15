@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import CartPage from './cart/cartViewPage'
 
 class Header extends Component {
 
@@ -8,6 +9,12 @@ class Header extends Component {
     }
 
     render () {
+
+        const imageClick = () => {
+            console.log('Click');
+
+          } 
+
         console.log(this.state);
        let noOfItem = this.handleLanguage;
         return (
@@ -57,8 +64,10 @@ class Header extends Component {
                         <span className="linedivide1"></span>
 
                         <div className="header-wrapicon2">
-                            <img src="images/icons/icon-header-02.png" className="header-icon1 js-show-header-dropdown" alt="ICON"/>
+                        <Link to="/CartPage">
+                            <img src="images/icons/icon-header-02.png" className="header-icon1 js-show-header-dropdown" alt="ICON" onClick={() => imageClick()} />
                             <span className="header-icons-noti">{noOfItem}</span>
+                        </Link>
                         </div>
                     </div>
 

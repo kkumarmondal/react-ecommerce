@@ -1,20 +1,30 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import * as actions from './../../actions'
+import Header from '../header';
+import {Link} from 'react-router-dom'
 
 class CartViewPage extends Component {
-
+  
 componentWillMount(){
-    this.props.productDetails(this.props.match.params.id)
-    console.log(this.datavalue);
+    let productInfo = localStorage.getItem('data');
+    productInfo =JSON.parse(productInfo);
+   let productId = productInfo.productId;
+    console.log(productId);
+    this.props.productDetails(productId);
+ 
 }
-render() {    
+render() {  
+    let productInfo = localStorage.getItem('data');
+    productInfo =JSON.parse(productInfo);
     let product = this.props.data;   
+    console.log(product);
     return (
         product ?
         <div>
-            CartViewPage
-            {console.log(this.props)}
+            <Header/>
+          
+            {/* {console.log(this.props)} */}
 	         <section className="bg-title-page p-t-40 p-b-50 flex-col-c-m" >
 		        <h2 className="l-text2 t-center">
 			    Cart
@@ -40,25 +50,25 @@ render() {
                                 <tr className="table-row">
                                     <td className="column-1">
                                         <div className="cart-img-product b-rad-4 o-f-hidden">
-                                            <img src={product.images[0].src} alt="IMG-PRODUCT"/>
+                                        <img src={product.images[0].src} alt="IMG-PRODUCT"/>
                                         </div>
                                     </td>
                                     <td className="column-2"> {product.name} </td>
-                                    <td className="column-3" dangerouslySetInnerHTML={{__html:product.price_html}}></td>
+                                    <td className="column-3" >	<span className="block2-price m-text6 p-r-5" dangerouslySetInnerHTML={{__html:product.price_html}}></span></td>
                                     <td className="column-4">
                                         <div className="flex-w bo5 of-hidden w-size17">
                                             <button className="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
                                                 <i className="fs-12 fa fa-minus" aria-hidden="true"></i>
                                             </button>
 
-                                            <input className="size8 m-text18 t-center num-product" type="number" name="num-product1" />
+                                            <input className="size8 m-text18 t-center num-product" type="number" name="num-product1" value ={productInfo.quantity} />
 
                                             <button className="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
                                                 <i className="fs-12 fa fa-plus" aria-hidden="true"></i>
                                             </button>
                                         </div>
                                     </td>
-                                    <td className="column-5">$36.00</td>
+                                    <td className="column-5">	<span className="block2-price m-text6 p-r-5" dangerouslySetInnerHTML={{__html:product.price_html}}></span></td>
                                 </tr>
                                 </tbody>
 
@@ -122,9 +132,7 @@ render() {
                                 Subtotal:
                             </span>
 
-                            <span className="m-text21 w-size20 w-full-sm">
-                                $39.00
-                            </span>
+                         <span className="block2-price m-text6 p-r-5" dangerouslySetInnerHTML={{__html:product.price_html}}></span>
                         </div>
 
                     
@@ -174,16 +182,15 @@ render() {
                                 Total:
                             </span>
 
-                            <span className="m-text21 w-size20 w-full-sm">
-                                $39.00
-                            </span>
+                            <span className="block2-price m-text6 p-r-5" dangerouslySetInnerHTML={{__html:product.price_html}}></span>
                         </div>
 
                         <div className="size15 trans-0-4">
-                        
+                        <Link to="/DetailsPage" >
                             <button className="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
                                 Proceed to Checkout
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -197,4 +204,4 @@ const mapStatetoProps = (state) => {
         data: state.products.productData
     }
 }
-export default connect(mapStatetoProps,actions)(CartViewPage)
+ export default connect(mapStatetoProps,actions)(CartViewPage)
