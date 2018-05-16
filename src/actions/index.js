@@ -42,16 +42,6 @@ export function postList(){
     }
 }
 
-export function productDetails(id){
-    const request = axios.get(`http://localhost/react-ecommerce/reactPress/wp-json/wp/v2/posts/${id}`)
-    .then( response => response.data)
-    
-    return{
-        type:'GET_PRODUCT_DETAIL',
-        payload: request
-    }
-    
-}
 
 export function clearProductDetail(){
     return{
@@ -63,8 +53,8 @@ export function clearProductDetail(){
 // action function to fetch all products from PRODUCTS(woocommerce specific)
 export function productList() {
     var url =`https://localhost/react-ecommerce/reactPress/wp-json/wc/v2/products`;
-    var username = 'ck_dfd6c2e255d09f722f7f542cdc3fe82c8abb08ad';
-    var pswrd= 'cs_708a36047ace43744ad886a3996babc4e5863279';
+    var username = 'ck_5bf3a9af0db119312fa463bd6eae82f9f07835ba';
+    var pswrd= 'cs_bb0658ac9ac9a9a98db6fb2cbc0c9635f4adc345';
     const request =axios.get(url,{
         auth: {
             username: username,
@@ -77,4 +67,23 @@ export function productList() {
         type:'GET_ALL_PRODUCT',
         payload:request
     }
+}
+
+export function productDetails(id){
+    var url =`https://localhost/react-ecommerce/reactPress/wp-json/wc/v2/products/${id}`;
+    var username = 'ck_5bf3a9af0db119312fa463bd6eae82f9f07835ba';
+    var pswrd= 'cs_bb0658ac9ac9a9a98db6fb2cbc0c9635f4adc345';
+    const request =axios.get(url,{
+        auth: {
+            username: username,
+            password: pswrd
+        }
+    })
+    .then( response => response.data)
+    
+    return{
+        type:'GET_PRODUCT_DETAIL',
+        payload: request
+    }
+    
 }

@@ -8,6 +8,7 @@ import promiseMiddleware from 'redux-promise';
 import Router from './router'
 
 import reducers from './reducers'
+
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore)
 
 ReactDOM.render(
